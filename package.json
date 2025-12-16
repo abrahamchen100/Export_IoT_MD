@@ -2,15 +2,24 @@
   "name": "downloadworkflow",
   "version": "1.0.0",
   "description": "Download automation workflow",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
+    "start": "ts-node server.ts",
+    "dev": "ts-node server.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.2",
+    "body-parser": "^2.2.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
     "fs": "0.0.1-security",
-    "mssql": "^10.0.1"
+    "mssql": "^10.0.1",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/mssql": "^9.1.4"

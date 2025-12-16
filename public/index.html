@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Download Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>IoT Workflow Download Tool</h1>
+        <p class="subtitle">Download automation workflows from SQL Server database</p>
+
+        <form id="downloadForm">
+            <div class="section">
+                <h2>Database Configuration</h2>
+                <div class="form-group">
+                    <label for="dbServer">Server:</label>
+                    <input type="text" id="dbServer" name="server" value="TWAGQASMES" required>
+                </div>
+                <div class="form-group">
+                    <label for="dbPort">Port:</label>
+                    <input type="number" id="dbPort" name="port" value="1433" required>
+                </div>
+                <div class="form-group">
+                    <label for="dbDatabase">Database:</label>
+                    <input type="text" id="dbDatabase" name="database" value="MES" required>
+                </div>
+                <div class="form-group">
+                    <label for="dbUser">User:</label>
+                    <input type="text" id="dbUser" name="user" value="userMES" required>
+                </div>
+                <div class="form-group">
+                    <label for="dbPassword">Password:</label>
+                    <input type="password" id="dbPassword" name="password" required>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Download Configuration</h2>
+                <button type="button" id="loadControllersBtn" class="secondary-btn">Load Controllers from Database</button>
+                <div id="controllersLoader" class="small-loader hidden">
+                    <div class="small-spinner"></div>
+                    <span>Loading controllers...</span>
+                </div>
+                <div class="form-group">
+                    <label for="controllerName">Controller Name:</label>
+                    <select id="controllerName" name="controllerName" required>
+                        <option value="">-- Select a controller or load from database --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="controllerVersion">Controller Version:</label>
+                    <select id="controllerVersion" name="controllerVersion" required>
+                        <option value="">-- Select controller first --</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="outputPath">Output Path:</label>
+                    <input type="text" id="outputPath" name="outputPath" placeholder="D:/IOT/Test/downloadMD/" required>
+                </div>
+            </div>
+
+            <button type="submit" id="downloadBtn">Download Workflows</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <div id="resultMessage"></div>
+        </div>
+
+        <div id="logsPanel" class="logs-panel hidden">
+            <h3>Process Logs</h3>
+            <div id="logsContent" class="logs-content"></div>
+        </div>
+
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <p>Downloading workflows...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
