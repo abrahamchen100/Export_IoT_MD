@@ -12,7 +12,7 @@ export const CONFIG = {
     user: 'MESUser', // SQL Server user
     password: 'localEnvPassword',// password
     server: 'localhost', // host
-    database: 'USIZJIntegartion', // database
+    database: 'USIZJIntegartion', // database, ab test
     port: 1433, // Default 1433
     // ...
 }
